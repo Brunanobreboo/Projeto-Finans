@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    
+    <h1 class="calc">Calcule juros simples e compostos!</h1>
+
+    <div class="calculadora">
+    <h2>Calculadora de Juros Simples</h2>
+    Capital: <input id="s1" type="number"> 
+    Taxa de juros: <input id="s2" type="number"> 
+    Tempo (em anos): <input id="s3" type="number">  
+    <button onclick="multiplicar()">Calcular</button> <br>
+    <h3>Resultado: <span id="resulta"></span></h3>
+    </div>
+
+    <script>
+        var s1 = document.querySelector('#s1')
+        var s2 = document.querySelector('#s2')
+        var s3 = document.querySelector('#s3')
+        var q = document.querySelector('#resulta')
+
+        function multiplicar(){
+            q.innerHTML = s1.value * (s2.value / 100) * s3.value; 
+        }
+    </script>
+
+
+
+    <div class="calculadora">
+        <h2>Calculadora de Juros Compostos</h2>
+        Capital: <input id="c1" type="number"> 
+        Taxa de juros: <input id="c2" type="number"> 
+        Tempo (em anos): <input id="c3" type="number">  
+        <button onclick="calcular()">Calcular</button> <br>
+        <h3>Resultado: <span id="result"></span></h3>
+    </div>
+
+    <script>
+        var c1 = document.querySelector('#c1')
+        var c2 = document.querySelector('#c2')
+        var c3 = document.querySelector('#c3')
+        var r = document.querySelector('#result')
+
+        function calcular(){
+            r.innerHTML = c1.value * (1 + (c2.value / 100))**c3.value; 
+        }
+    </script>
+
+    
+
+</body>
+</html>
